@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gptr-twittrapi-retriever"
+version = "0.1.0"
+description = "X/Twitter search for GPT Researcher, backed by TwittrAPI"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "TwittrAPI", email = "support@twittrapi.com" }]
+keywords = ["gpt-researcher", "retriever", "twitter", "x", "search"]
+dependencies = ["gpt-researcher>=0.16.1"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.urls]
+Homepage = "https://twittrapi.com"
+Documentation = "https://twittrapi.com/docs"
+Source = "https://github.com/twittrapi/gptr-twittrapi-retriever"
+
+[project.entry-points."gpt_researcher.retrievers"]
+twittrapi = "gptr_twittrapi_retriever:TwittrAPISearch"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
